@@ -21,6 +21,10 @@
   --shadow:       0 20px 60px rgba(0,0,0,.5);
   --ff-head: 'Playfair Display', 'Georgia', serif;
   --ff-body: 'Poppins', 'Segoe UI', sans-serif;
+  --hero-lift:    210px; /* extra top space reserved for the large unscrolled header logo */
+}
+@media (max-width:980px){
+  :root{ --hero-lift: 95px; }
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -82,14 +86,23 @@ section{ padding:96px 0; position:relative; }
 /* ---------- Header ---------- */
 .site-header{
   position:fixed; top:0; left:0; right:0; z-index:200;
-  padding:16px 0; background:rgba(10,10,12,.65);
+  padding:30px 0; background:rgba(10,10,12,.65);
   backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid transparent; transition:background .3s,border-color .3s;
+  border-bottom:1px solid transparent; transition:background .3s,border-color .3s,padding .35s ease;
 }
-.site-header.scrolled{ background:rgba(10,10,12,.92); border-color:var(--border); }
+.site-header.scrolled{ background:rgba(10,10,12,.92); border-color:var(--border); padding:14px 0; }
 .site-header .container{ display:flex; align-items:center; justify-content:space-between; gap:20px; }
-.brand{ display:flex; align-items:center; gap:12px; }
-.brand img{ height:52px; width:52px; border-radius:50%; object-fit:cover; box-shadow:0 0 0 2px var(--pink),0 0 22px var(--pink-glow); }
+.brand{ display:flex; align-items:center; gap:16px; }
+.brand img{
+  height:230px; width:230px; border-radius:50%; object-fit:cover;
+  box-shadow:0 0 0 2px var(--pink),0 0 40px var(--pink-glow);
+  transition:height .35s ease, width .35s ease, box-shadow .35s ease;
+}
+.site-header.scrolled .brand img{ height:56px; width:56px; box-shadow:0 0 0 2px var(--pink),0 0 22px var(--pink-glow); }
+@media (max-width:980px){
+  .brand img{ height:104px; width:104px; }
+  .site-header.scrolled .brand img{ height:48px; width:48px; }
+}
 .brand-text{ display:flex; flex-direction:column; line-height:1.15; }
 .brand-text strong{ font-family:var(--ff-head); font-size:1.05rem; color:var(--white); }
 .brand-text span{ font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--pink-2); }
@@ -126,9 +139,29 @@ section{ padding:96px 0; position:relative; }
     radial-gradient(ellipse 50% 60% at 90% 10%, rgba(255,63,150,.18), transparent 55%),
     radial-gradient(ellipse 70% 60% at 50% 100%, rgba(156,0,82,.35), transparent 60%),
     var(--black);
-  padding-top:140px; padding-bottom:100px;
+  padding-top:calc(140px + var(--hero-lift)); padding-bottom:100px;
 }
+.hero-stack{ width:100%; }
 .hero-inner{ max-width:760px; }
+
+/* ---------- Blooming flowers strip (below header) ---------- */
+.bloom-strip{
+  display:flex; justify-content:center; flex-wrap:wrap; gap:clamp(18px,4vw,42px);
+  margin-bottom:40px;
+}
+.bloom-strip .bloom{
+  display:inline-block; font-size:clamp(1.8rem,3vw,2.6rem); line-height:1; transform-origin:bottom center;
+  filter:drop-shadow(0 8px 20px rgba(236,24,119,.35));
+  animation:bloom 4.5s ease-in-out infinite;
+  animation-delay:var(--d,0s);
+}
+@keyframes bloom{
+  0%,100%{ transform:scale(.35) rotate(-10deg); opacity:.4; }
+  50%{ transform:scale(1) rotate(4deg); opacity:1; }
+}
+@media (prefers-reduced-motion:reduce){
+  .bloom-strip .bloom{ animation:none; transform:scale(1); opacity:1; }
+}
 .hero .eyebrow{ color:var(--pink-2); }
 .hero h1{ text-shadow:0 4px 40px rgba(0,0,0,.6); }
 .hero h1 span{ color:var(--pink-2); font-style:italic; }
@@ -350,7 +383,7 @@ html.js .reveal.in{ opacity:1; transform:translateY(0); }
   .form-row{ grid-template-columns:1fr; }
   .kwiatomat{ padding:36px 24px; }
   .footer-grid{ grid-template-columns:1fr; }
-  .hero{ padding-top:120px; }
+  .hero{ padding-top:calc(120px + var(--hero-lift)); }
   .site-header .header-actions .btn{ display:none; }
 }
 

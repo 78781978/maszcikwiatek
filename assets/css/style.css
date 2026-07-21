@@ -154,10 +154,6 @@ section{ padding:96px 0; position:relative; }
   .hero-media video{ display:none; }
   .hero-media{ background:url('../img/kwiat-poster.jpg') center 30%/cover; }
 }
-@media (max-width:680px){
-  .hero-media video{ display:none; }
-  .hero-media{ background:url('../img/kwiat-poster.jpg') center 30%/cover; }
-}
 .hero-stack{ width:100%; position:relative; z-index:1; }
 .hero-inner{ max-width:760px; }
 

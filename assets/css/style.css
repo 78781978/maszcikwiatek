@@ -211,15 +211,8 @@ section{ padding:96px 0; position:relative; }
   position:relative; overflow:hidden;
   aspect-ratio:1/1; border-radius:var(--radius); border:1px solid var(--border); box-shadow:var(--shadow);
   background:var(--black-card);
-  display:flex; align-items:flex-end; justify-content:center;
-  text-align:center;
 }
 .brand-panel img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-.brand-panel span{
-  position:relative; z-index:1; width:100%; padding:28px 24px 22px;
-  background:linear-gradient(to top, rgba(0,0,0,.85), transparent);
-  font-family:var(--ff-head); font-style:italic; color:var(--pink-2); font-size:1.15rem;
-}
 .stat-row{ display:flex; gap:40px; margin-top:30px; }
 .stat-row div strong{ display:block; font-family:var(--ff-head); font-size:2.2rem; color:var(--pink-2); }
 .stat-row div span{ font-size:.82rem; color:var(--gray); }

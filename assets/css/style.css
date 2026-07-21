@@ -122,8 +122,10 @@ section{ padding:96px 0; position:relative; }
 .hero{
   min-height:100vh; display:flex; align-items:flex-end;
   background:
-    linear-gradient(180deg, rgba(8,8,10,.35) 0%, rgba(8,8,10,.55) 45%, rgba(8,8,10,.96) 100%),
-    url('../img/hero-sklep.jpg') center 20%/cover no-repeat;
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(236,24,119,.30), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 90% 10%, rgba(255,63,150,.18), transparent 55%),
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(156,0,82,.35), transparent 60%),
+    var(--black);
   padding-top:140px; padding-bottom:100px;
 }
 .hero-inner{ max-width:760px; }
@@ -172,6 +174,18 @@ section{ padding:96px 0; position:relative; }
 /* ---------- About split ---------- */
 .split{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
 .split img.rounded{ border-radius:var(--radius); box-shadow:var(--shadow); border:1px solid var(--border); }
+
+.brand-panel{
+  aspect-ratio:4/5; border-radius:var(--radius); border:1px solid var(--border); box-shadow:var(--shadow);
+  background:
+    radial-gradient(circle at 30% 22%, rgba(236,24,119,.30), transparent 55%),
+    radial-gradient(circle at 75% 80%, rgba(255,63,150,.16), transparent 50%),
+    var(--black-card);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; padding:40px;
+  text-align:center;
+}
+.brand-panel img{ width:44%; max-width:220px; filter:drop-shadow(0 14px 40px rgba(236,24,119,.45)); }
+.brand-panel span{ font-family:var(--ff-head); font-style:italic; color:var(--pink-2); font-size:1.15rem; }
 .stat-row{ display:flex; gap:40px; margin-top:30px; }
 .stat-row div strong{ display:block; font-family:var(--ff-head); font-size:2.2rem; color:var(--pink-2); }
 .stat-row div span{ font-size:.82rem; color:var(--gray); }
@@ -203,7 +217,6 @@ section{ padding:96px 0; position:relative; }
   background:linear-gradient(150deg,#1b1b20,#0c0c0e); border:1px solid var(--border);
   display:flex; align-items:flex-end; padding:22px; cursor:pointer;
 }
-.portfolio-tile.photo{ background-size:cover; background-position:center; }
 .portfolio-tile::before{
   content:""; position:absolute; inset:0;
   background:linear-gradient(180deg,transparent 40%, rgba(0,0,0,.85) 100%);

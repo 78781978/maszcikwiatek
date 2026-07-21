@@ -184,7 +184,23 @@ section{ padding:96px 0; position:relative; }
 .grid{ display:grid; gap:28px; }
 .grid-2{ grid-template-columns:repeat(2,1fr); }
 .grid-3{ grid-template-columns:repeat(3,1fr); }
+.grid-4{ grid-template-columns:repeat(4,1fr); }
 .grid-5{ grid-template-columns:repeat(5,1fr); }
+
+/* ---------- Reviews ---------- */
+.review-card{
+  display:flex; flex-direction:column; background:var(--black-card); border:1px solid var(--border);
+  border-radius:var(--radius); padding:26px 24px; transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.review-card:hover{ transform:translateY(-6px); border-color:rgba(236,24,119,.4); box-shadow:var(--shadow); }
+.review-card .stars{ margin-bottom:14px; }
+.review-card .review-text{
+  font-size:.88rem; color:var(--silver); line-height:1.6; flex-grow:1;
+  display:-webkit-box; -webkit-line-clamp:7; -webkit-box-orient:vertical; overflow:hidden;
+}
+.review-card .review-author{ margin-top:18px; padding-top:16px; border-top:1px solid var(--border); }
+.review-card .review-author strong{ display:block; font-size:.92rem; color:var(--white); }
+.review-card .review-author span{ font-size:.76rem; color:var(--gray); }
 
 .card{
   background:var(--black-card); border:1px solid var(--border); border-radius:var(--radius);
@@ -361,6 +377,7 @@ html.js .reveal.in{ opacity:1; transform:translateY(0); }
   .main-nav{ display:none; }
   .nav-toggle{ display:flex; }
   .grid-3{ grid-template-columns:repeat(2,1fr); }
+  .grid-4{ grid-template-columns:repeat(2,1fr); }
   .grid-5{ grid-template-columns:repeat(2,1fr); }
   .split{ grid-template-columns:1fr; gap:36px; }
   .contact-grid{ grid-template-columns:1fr; }
@@ -369,7 +386,7 @@ html.js .reveal.in{ opacity:1; transform:translateY(0); }
 }
 @media (max-width:640px){
   section{ padding:66px 0; }
-  .grid-2, .grid-3, .grid-5{ grid-template-columns:1fr; }
+  .grid-2, .grid-3, .grid-4, .grid-5{ grid-template-columns:1fr; }
   .portfolio-grid{ grid-template-columns:1fr; }
   .form-row{ grid-template-columns:1fr; }
   .kwiatomat{ padding:36px 24px; }

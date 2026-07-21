@@ -496,12 +496,12 @@ html.js .reveal.in{ opacity:1; transform:translateY(0); }
 /* ---------- Decorative flower flourishes ---------- */
 .hero-flourish{
   position:absolute; z-index:0; pointer-events:none;
-  top:0; left:-40px; width:380px; height:825px; opacity:.92;
+  top:0; left:-30px; width:304px; height:825px; opacity:.92;
   -webkit-mask-image:linear-gradient(to right, #000 0%, #000 58%, transparent 94%);
   mask-image:linear-gradient(to right, #000 0%, #000 58%, transparent 94%);
 }
 .hero-flourish img{ width:100%; height:100%; object-fit:cover; object-position:50% 0%; }
-@media (max-width:1300px){ .hero-flourish{ width:300px; height:651px; left:-30px; } }
+@media (max-width:1300px){ .hero-flourish{ width:240px; height:651px; left:-24px; } }
 @media (max-width:900px){ .hero-flourish{ display:none; } }
 
 .footer-flourish{

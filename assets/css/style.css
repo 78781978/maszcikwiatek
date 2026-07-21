@@ -202,7 +202,7 @@ section{ padding:96px 0; position:relative; }
   .hero-media{ background:url('../img/kwiat-poster.jpg') center 30%/cover; }
 }
 .hero-stack{ width:100%; position:relative; z-index:1; }
-.hero-inner{ max-width:860px; position:relative; z-index:1; }
+.hero-inner{ max-width:900px; position:relative; z-index:1; }
 
 .hero .eyebrow{ color:var(--pink-2); }
 .hero h1{ text-shadow:0 4px 40px rgba(0,0,0,.6); }
@@ -221,11 +221,16 @@ section{ padding:96px 0; position:relative; }
 .hero-badges{
   margin-top:56px; display:flex; flex-wrap:wrap; row-gap:14px;
 }
-.hero-badges div{ display:flex; align-items:center; gap:10px; font-size:.88rem; color:var(--silver); }
-.hero-badges div:not(:first-child){ margin-left:30px; position:relative; }
+.hero-badges div{ display:flex; align-items:center; gap:8px; font-size:.85rem; color:var(--silver); white-space:nowrap; }
+.hero-badges div:not(:first-child){ margin-left:24px; position:relative; }
 .hero-badges div:not(:first-child)::before{
-  content:''; position:absolute; left:-15px; top:50%; transform:translateY(-50%);
+  content:''; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
   width:5px; height:5px; border-radius:50%; background:var(--pink);
+}
+/* Guaranteed single line above the mobile stack breakpoint - not just
+   "should fit", so font-metric/scrollbar variance can never wrap it. */
+@media (min-width:901px){
+  .hero-badges{ flex-wrap:nowrap; }
 }
 
 /* ---------- USP bar ---------- */
@@ -480,6 +485,10 @@ html.js .reveal.in{ opacity:1; transform:translateY(0); }
   .footer-grid{ grid-template-columns:1fr; }
   .hero{ padding-top:calc(120px + var(--hero-lift)); }
   .site-header .header-actions .btn{ display:none; }
+}
+/* Below the guaranteed-nowrap breakpoint, the row may wrap - drop the
+   inline separator/indent so a wrapped badge never looks orphaned. */
+@media (max-width:900px){
   .hero-badges div:not(:first-child){ margin-left:0; }
   .hero-badges div:not(:first-child)::before{ display:none; }
 }

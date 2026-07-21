@@ -175,7 +175,7 @@ section{ padding:96px 0; position:relative; }
 .usp-item{ display:flex; align-items:center; gap:14px; flex:1 1 200px; }
 .usp-item .ico{
   width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-  background:linear-gradient(135deg,var(--pink),var(--pink-dark)); flex-shrink:0; font-size:1.2rem;
+  background:linear-gradient(135deg,var(--pink),var(--pink-dark)); flex-shrink:0; font-size:1.2rem; color:#fff;
 }
 .usp-item strong{ display:block; color:var(--white); font-size:.95rem; }
 .usp-item span{ font-size:.8rem; color:var(--gray); }
@@ -194,6 +194,7 @@ section{ padding:96px 0; position:relative; }
 .card .ico{
   width:56px; height:56px; border-radius:16px; display:flex; align-items:center; justify-content:center;
   background:rgba(236,24,119,.12); border:1px solid rgba(236,24,119,.3); font-size:1.5rem; margin-bottom:20px;
+  color:var(--pink-2);
 }
 .card h3{ margin-bottom:10px; }
 .card p{ margin-bottom:0; font-size:.92rem; }
@@ -244,7 +245,7 @@ section{ padding:96px 0; position:relative; }
   content:""; position:absolute; inset:0;
   background:linear-gradient(180deg,transparent 40%, rgba(0,0,0,.85) 100%);
 }
-.portfolio-tile .tile-ico{ position:absolute; top:22px; left:22px; font-size:1.8rem; opacity:.5; }
+.portfolio-tile .tile-ico{ position:absolute; top:22px; left:22px; font-size:1.8rem; opacity:.55; color:var(--pink-2); }
 .portfolio-tile .tile-label{ position:relative; z-index:1; }
 .portfolio-tile .tile-label strong{ display:block; color:#fff; font-family:var(--ff-head); font-size:1.15rem; }
 .portfolio-tile .tile-label span{ font-size:.78rem; color:var(--pink-2); }
@@ -260,7 +261,7 @@ section{ padding:96px 0; position:relative; }
 .contact-card:hover{ border-color:var(--pink); transform:translateX(4px); }
 .contact-card .ico{
   width:48px; height:48px; border-radius:50%; background:rgba(236,24,119,.14); border:1px solid rgba(236,24,119,.3);
-  display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; color:var(--pink-2);
 }
 .contact-card strong{ display:block; font-size:.95rem; color:var(--white); }
 .contact-card span{ font-size:.83rem; color:var(--gray); }
@@ -375,6 +376,7 @@ html.js .reveal.in{ opacity:1; transform:translateY(0); }
   .footer-grid{ grid-template-columns:1fr; }
   .hero{ padding-top:calc(120px + var(--hero-lift)); }
   .site-header .header-actions .btn{ display:none; }
+  .dot-sep{ display:none; }
 }
 
 /* Mobile nav drawer */

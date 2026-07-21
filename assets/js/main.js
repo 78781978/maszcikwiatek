@@ -1,4 +1,4 @@
-/* Kwiaciarnia "Masz Ci Kwiatek!" — skrypty strony */
+/* Kwiaciarnia "Masz Ci Kwiatek!" - skrypty strony */
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* --- Formularz kontaktowy (FormSubmit.co — bez backendu) --- */
+  /* --- Formularz kontaktowy (FormSubmit.co - bez backendu) --- */
   var form = document.getElementById('contact-form');
   if (form) {
     var msg = document.getElementById('form-msg');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
       })
         .then(function (res) {
           if (res.ok) {
-            msg.textContent = 'Dziękujemy! Twoja wiadomość została wysłana — odezwiemy się najszybciej, jak to możliwe.';
+            msg.textContent = 'Dziękujemy! Twoja wiadomość została wysłana - odezwiemy się najszybciej, jak to możliwe.';
             msg.className = 'form-msg ok';
             form.reset();
           } else {

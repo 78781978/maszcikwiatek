@@ -10,7 +10,7 @@
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=10">
+<link rel="stylesheet" href="assets/css/style.css?v=11">
 </head>
 <body>
 
@@ -159,6 +159,7 @@
         <ul>
           <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
           <li><a href="polityka-prywatnosci.html#cookies">Polityka cookies</a></li>
+          <li><a href="#" data-cookie="reopen">Ustawienia cookies</a></li>
           <li><a href="kontakt.html#mapa">Jak dojechać</a></li>
         </ul>
       </div>
@@ -183,12 +184,64 @@
   <div class="cookie-actions">
     <button class="btn btn-primary btn-sm" data-cookie="accept">Akceptuję wszystkie</button>
     <button class="btn btn-outline btn-sm" data-cookie="reject">Tylko niezbędne</button>
+    <button class="btn btn-text btn-sm" data-cookie="settings">Dostosuj</button>
+  </div>
+</div>
+
+<div class="cookie-modal-backdrop" data-cookie-backdrop></div>
+<div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+  <button type="button" class="cookie-modal-close" data-cookie="close" aria-label="Zamknij okno ustawień cookies">&times;</button>
+  <h3 id="cookie-modal-title">Ustawienia prywatności</h3>
+  <p>Wybierz, na jakie pliki cookie się zgadzasz. Niezbędne pliki są zawsze aktywne, ponieważ zapewniają podstawowe działanie strony.</p>
+  <div class="cookie-cat">
+    <div class="cookie-cat-info"><strong>Niezbędne</strong><span>Wymagane do działania strony (np. zapamiętanie Twojego wyboru).</span></div>
+    <div class="a11y-switch on" aria-hidden="true"></div>
+  </div>
+  <div class="cookie-cat">
+    <div class="cookie-cat-info"><strong>Statystyczne</strong><span>Pomagają nam analizować ruch na stronie.</span></div>
+    <button type="button" class="a11y-switch" data-cookie-toggle="analytics" aria-pressed="false" aria-label="Pliki statystyczne"></button>
+  </div>
+  <div class="cookie-cat">
+    <div class="cookie-cat-info"><strong>Marketingowe</strong><span>Pozwalają wyświetlać spersonalizowane treści i reklamy.</span></div>
+    <button type="button" class="a11y-switch" data-cookie-toggle="marketing" aria-pressed="false" aria-label="Pliki marketingowe"></button>
+  </div>
+  <div class="cookie-modal-actions">
+    <button class="btn btn-primary btn-sm" data-cookie="save">Zapisz wybór</button>
+    <button class="btn btn-outline btn-sm" data-cookie="accept-all-modal">Zaakceptuj wszystkie</button>
   </div>
 </div>
 
 <a href="tel:+48573377330" class="float-call" aria-label="Zadzwoń teraz"><svg class="icon-phone" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
 
-<script src="assets/js/main.js?v=5"></script>
+<button class="a11y-toggle" id="a11y-toggle" aria-label="Opcje dostępności (WCAG)" aria-expanded="false" aria-controls="a11y-panel">
+  <svg viewBox="0 0 24 24" width="1.5em" height="1.5em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="8" r="1.6" fill="currentColor" stroke="none"/><path d="M7 10.6c1.6.9 3.3 1.3 5 1.3s3.4-.4 5-1.3"/><path d="M12 11.9v3.6M12 15.5l-2.2 4M12 15.5l2.2 4"/></svg>
+</button>
+<div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Opcje dostępności">
+  <h3>Dostępność (WCAG)</h3>
+  <div class="a11y-row">
+    <span>Rozmiar czcionki</span>
+    <div class="a11y-fontbtns">
+      <button type="button" data-a11y="font-dec" aria-label="Zmniejsz czcionkę">A&minus;</button>
+      <button type="button" data-a11y="font-inc" aria-label="Zwiększ czcionkę">A+</button>
+    </div>
+  </div>
+  <div class="a11y-row">
+    <span>Wysoki kontrast</span>
+    <button type="button" class="a11y-switch" data-a11y="contrast" aria-pressed="false" aria-label="Wysoki kontrast"></button>
+  </div>
+  <div class="a11y-row">
+    <span>Podkreśl linki</span>
+    <button type="button" class="a11y-switch" data-a11y="underline" aria-pressed="false" aria-label="Podkreśl linki"></button>
+  </div>
+  <div class="a11y-row">
+    <span>Czytelna czcionka</span>
+    <button type="button" class="a11y-switch" data-a11y="readable" aria-pressed="false" aria-label="Czytelna czcionka"></button>
+  </div>
+  <button type="button" class="a11y-reset" data-a11y="reset">Przywróć domyślne</button>
+</div>
+
+
+<script src="assets/js/main.js?v=6"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

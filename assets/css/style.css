@@ -437,7 +437,43 @@ section{ padding:96px 0; position:relative; }
 }
 .cookie-banner.show{ transform:translateY(0); }
 .cookie-banner p{ font-size:.85rem; margin-bottom:16px; }
-.cookie-banner .cookie-actions{ display:flex; gap:12px; flex-wrap:wrap; }
+.cookie-banner .cookie-actions{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.btn-text{
+  background:none; border-color:transparent; color:var(--gray); padding:11px 6px; text-decoration:underline;
+  text-underline-offset:3px;
+}
+.btn-text:hover{ color:var(--pink-2); }
+
+/* ---------- Cookie preferences modal ---------- */
+.cookie-modal-backdrop{
+  position:fixed; inset:0; z-index:600; background:rgba(0,0,0,.65);
+  opacity:0; visibility:hidden; transition:opacity .25s ease, visibility .25s;
+}
+.cookie-modal-backdrop.open{ opacity:1; visibility:visible; }
+.cookie-modal{
+  position:fixed; top:50%; left:50%; z-index:601; width:min(480px, calc(100vw - 40px));
+  max-height:calc(100vh - 60px); overflow-y:auto;
+  background:var(--black-card); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:32px;
+  opacity:0; visibility:hidden; transform:translate(-50%,-50%) scale(.96);
+  transition:opacity .25s ease, transform .25s ease, visibility .25s;
+}
+.cookie-modal.open{ opacity:1; visibility:visible; transform:translate(-50%,-50%) scale(1); }
+.cookie-modal h3{ margin:0 0 8px; font-size:1.25rem; }
+.cookie-modal > p{ font-size:.85rem; color:var(--gray); margin-bottom:8px; }
+.cookie-modal-close{
+  position:absolute; top:18px; right:18px; width:34px; height:34px; border-radius:50%;
+  border:1px solid var(--border); background:transparent; color:var(--silver);
+  font-size:1.2rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;
+}
+.cookie-modal-close:hover{ border-color:var(--pink); color:var(--pink-2); }
+.cookie-cat{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+  padding:16px 0; border-top:1px solid var(--border);
+}
+.cookie-cat-info strong{ display:block; font-size:.92rem; margin-bottom:4px; color:var(--white); }
+.cookie-cat-info span{ font-size:.8rem; color:var(--gray); }
+.cookie-modal-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
 
 /* ---------- Floating call button ---------- */
 .float-call{
@@ -450,6 +486,72 @@ section{ padding:96px 0; position:relative; }
   70%{ box-shadow:0 0 0 16px rgba(236,24,119,0); }
   100%{ box-shadow:0 0 0 0 rgba(236,24,119,0); }
 }
+
+/* ---------- Accessibility (WCAG) widget ---------- */
+.a11y-toggle{
+  position:fixed; left:22px; bottom:22px; z-index:300; width:60px; height:60px; border-radius:50%;
+  background:var(--black-card); border:1px solid var(--border); color:var(--white);
+  display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:var(--shadow);
+}
+.a11y-toggle:hover{ border-color:var(--pink); color:var(--pink-2); }
+.a11y-panel{
+  position:fixed; left:22px; bottom:92px; z-index:301; width:290px; max-width:calc(100vw - 44px);
+  background:var(--black-card); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:22px;
+  opacity:0; visibility:hidden; transform:translateY(12px);
+  transition:opacity .25s ease, transform .25s ease, visibility .25s;
+}
+.a11y-panel.open{ opacity:1; visibility:visible; transform:translateY(0); }
+.a11y-panel h3{ font-size:.95rem; margin:0 0 16px; color:var(--white); }
+.a11y-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; }
+.a11y-row span{ font-size:.85rem; color:var(--silver); }
+.a11y-fontbtns{ display:flex; gap:8px; }
+.a11y-fontbtns button{
+  width:32px; height:32px; border-radius:50%; border:1px solid var(--border); background:transparent;
+  color:var(--white); cursor:pointer; font-size:.85rem; font-weight:700; line-height:1;
+}
+.a11y-fontbtns button:hover{ border-color:var(--pink); color:var(--pink-2); }
+.a11y-switch{
+  position:relative; width:42px; height:24px; border-radius:999px; background:rgba(255,255,255,.15);
+  border:1px solid var(--border); cursor:pointer; flex-shrink:0; padding:0;
+}
+.a11y-switch::after{
+  content:''; position:absolute; top:2px; left:2px; width:18px; height:18px; border-radius:50%;
+  background:var(--white); transition:transform .2s ease;
+}
+.a11y-switch.on{ background:var(--pink); border-color:var(--pink); }
+.a11y-switch.on::after{ transform:translateX(18px); }
+.a11y-reset{
+  width:100%; margin-top:6px; padding:10px; border-radius:999px; border:1px solid var(--border);
+  background:transparent; color:var(--silver); font-size:.82rem; cursor:pointer;
+}
+.a11y-reset:hover{ border-color:var(--pink); color:var(--pink-2); }
+
+/* Effects toggled on <html> by the accessibility widget */
+html.a11y-underline a:not(.btn):not(.icon-link):not(.float-call):not(.a11y-toggle):not(.a11y-switch){
+  text-decoration:underline; text-underline-offset:3px;
+}
+html.a11y-readable body{ font-family:Arial, Helvetica, sans-serif; letter-spacing:.01em; }
+html.a11y-readable h1, html.a11y-readable h2, html.a11y-readable h3, html.a11y-readable h4{
+  font-family:Arial, Helvetica, sans-serif;
+}
+html.a11y-contrast body{ background:#000; }
+html.a11y-contrast p, html.a11y-contrast li, html.a11y-contrast span, html.a11y-contrast a,
+html.a11y-contrast h1, html.a11y-contrast h2, html.a11y-contrast h3, html.a11y-contrast h4{
+  color:#fff !important; text-shadow:none !important;
+}
+html.a11y-contrast .hero h1 span{ -webkit-text-fill-color:#fff; background:none; animation:none; }
+html.a11y-contrast .card, html.a11y-contrast .review-card, html.a11y-contrast .contact-card,
+html.a11y-contrast .portfolio-tile, html.a11y-contrast .cookie-banner, html.a11y-contrast .cookie-modal,
+html.a11y-contrast .a11y-panel{
+  background:#000 !important; border:1px solid #fff !important; box-shadow:none !important;
+}
+html.a11y-contrast .btn-primary{ background:#fff !important; color:#000 !important; box-shadow:none !important; }
+html.a11y-contrast .btn-outline, html.a11y-contrast .btn-text{ border-color:#fff !important; color:#fff !important; }
+html.a11y-contrast .section-alt-bg, html.a11y-contrast .hero-media video, html.a11y-contrast .hero-flourish,
+html.a11y-contrast .footer-flourish{ display:none !important; }
+html.a11y-contrast .hero-media{ background:#000; }
+html.a11y-contrast .hero-media::after{ background:#000; }
 
 /* ---------- Reveal animation (progressive enhancement: visible by default,
    only hidden-then-revealed when JS has confirmed it can run the animation) ---------- */

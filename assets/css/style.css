@@ -87,37 +87,14 @@ section{ padding:96px 0; position:relative; }
   position:relative; overflow:hidden;
   background:linear-gradient(135deg, #2a2b30 0%, #34353c 50%, #2a2b30 100%);
 }
-.section-alt::before{
-  content:''; position:absolute; inset:-20%; pointer-events:none; z-index:0;
-  background:linear-gradient(115deg, transparent 35%, rgba(255,255,255,.05) 47%, rgba(226,228,235,.14) 50%, rgba(255,255,255,.05) 53%, transparent 65%);
-  background-size:220% 220%;
-  animation:graphite-shimmer 10s ease-in-out infinite;
-}
-.section-alt::after{
-  content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
-  background-image:
-    radial-gradient(1.4px 1.4px at 12% 22%, rgba(255,255,255,.85), transparent),
-    radial-gradient(1px 1px at 28% 68%, rgba(255,255,255,.6), transparent),
-    radial-gradient(1.4px 1.4px at 47% 38%, rgba(255,255,255,.75), transparent),
-    radial-gradient(1px 1px at 63% 78%, rgba(255,255,255,.5), transparent),
-    radial-gradient(1.4px 1.4px at 78% 25%, rgba(255,255,255,.85), transparent),
-    radial-gradient(1px 1px at 88% 62%, rgba(255,255,255,.6), transparent),
-    radial-gradient(1.4px 1.4px at 20% 85%, rgba(255,255,255,.6), transparent),
-    radial-gradient(1px 1px at 55% 12%, rgba(255,255,255,.5), transparent),
-    radial-gradient(1px 1px at 95% 90%, rgba(255,255,255,.55), transparent);
-  animation:graphite-twinkle 4.5s ease-in-out infinite alternate;
+.section-alt-bg{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+.section-alt-bg video{
+  width:100%; height:100%; object-fit:cover;
+  opacity:.55; mix-blend-mode:screen;
 }
 .section-alt .container{ position:relative; z-index:1; }
-@keyframes graphite-shimmer{
-  0%,100%{ background-position:0% 0%; }
-  50%{ background-position:100% 100%; }
-}
-@keyframes graphite-twinkle{
-  0%{ opacity:.45; }
-  100%{ opacity:1; }
-}
 @media (prefers-reduced-motion:reduce){
-  .section-alt::before, .section-alt::after{ animation:none; }
+  .section-alt-bg video{ display:none; }
 }
 
 .eyebrow{

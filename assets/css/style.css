@@ -212,10 +212,12 @@ section{ padding:96px 0; position:relative; }
 .hero p.lead{ font-size:1.15rem; color:var(--silver); max-width:560px; }
 .hero-cta{ display:flex; flex-wrap:wrap; gap:16px; margin-top:32px; }
 .hero-badges{
-  margin-top:56px; display:flex; flex-wrap:wrap; row-gap:14px;
+  /* column-gap is the single, guaranteed source of horizontal spacing between
+     badges - it can never be zeroed out by a breakpoint override the way a
+     margin-left hack could, so items can never end up glued together. */
+  margin-top:56px; display:flex; flex-wrap:wrap; row-gap:14px; column-gap:24px;
 }
-.hero-badges div{ display:flex; align-items:center; gap:8px; font-size:.85rem; color:var(--silver); white-space:nowrap; }
-.hero-badges div:not(:first-child){ margin-left:24px; position:relative; }
+.hero-badges div{ display:flex; align-items:center; gap:8px; font-size:.85rem; color:var(--silver); white-space:nowrap; position:relative; }
 .hero-badges div:not(:first-child)::before{
   content:''; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
   width:5px; height:5px; border-radius:50%; background:var(--pink);
@@ -582,9 +584,9 @@ html.js .reveal.in{ opacity:1; transform:translateY(0); }
   .site-header .header-actions .btn{ display:none; }
 }
 /* Below the guaranteed-nowrap breakpoint, the row may wrap - drop the
-   inline separator/indent so a wrapped badge never looks orphaned. */
+   inline separator dot so a wrapped badge never looks orphaned. The
+   column-gap above still guarantees spacing regardless. */
 @media (max-width:900px){
-  .hero-badges div:not(:first-child){ margin-left:0; }
   .hero-badges div:not(:first-child)::before{ display:none; }
 }
 

@@ -85,7 +85,7 @@ p{ margin:0 0 1em; color:var(--gray); }
 section{ padding:96px 0; position:relative; }
 .section-alt{
   position:relative; overflow:hidden;
-  background:linear-gradient(135deg, #2a2b30 0%, #34353c 50%, #2a2b30 100%);
+  background:#000;
 }
 .section-alt-bg{ position:absolute; inset:0; z-index:0; pointer-events:none; }
 .section-alt-bg video{

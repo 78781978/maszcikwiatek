@@ -4,12 +4,12 @@
 <script>document.documentElement.classList.add("js");</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O nas — Kwiaciarnia „Masz Ci Kwiatek!”</title>
-<meta name="description" content="Poznaj historię kwiaciarni „Masz Ci Kwiatek!” w Michałowicach — pasję do kwiatów, zespół i wartości, którymi się kierujemy.">
+<title>O nas - Kwiaciarnia „Masz Ci Kwiatek!”</title>
+<meta name="description" content="Poznaj historię kwiaciarni „Masz Ci Kwiatek!” w Michałowicach - pasję do kwiatów, zespół i wartości, którymi się kierujemy.">
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=14">
 </head>
 <body>
 
@@ -27,7 +27,11 @@
       <a href="kontakt.html">Kontakt</a>
     </nav>
     <div class="header-actions">
-      <a href="tel:+48573377330" class="icon-link" aria-label="Zadzwoń">☎</a>
+      <div class="lang-switch" role="group" aria-label="Język strony">
+        <span class="is-active">PL</span>
+        <a href="en/o-nas.html">EN</a>
+      </div>
+      <a href="tel:+48573377330" class="icon-link" aria-label="Zadzwoń"><svg class="icon-phone" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
       <a href="kontakt.html" class="btn btn-primary btn-sm">Zamów kwiaty</a>
       <button class="nav-toggle" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
     </div>
@@ -41,9 +45,20 @@
   <a href="uslugi.html">Usługi</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="kontakt.html">Kontakt</a>
+  <div class="lang-switch" role="group" aria-label="Język strony">
+    <span class="is-active">PL</span>
+    <a href="en/o-nas.html">EN</a>
+  </div>
 </div>
 
 <section class="hero" style="min-height:60vh; padding-top:calc(160px + var(--hero-lift)); padding-bottom:70px;">
+  <div class="hero-media" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/img/kwiat-poster.jpg">
+      <source src="assets/video/kwiat-otwiera-sie.webm" type="video/webm">
+      <source src="assets/video/kwiat-otwiera-sie.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-flourish" aria-hidden="true"><img src="assets/img/flower-tall.jpg" alt=""></div>
   <div class="container hero-inner">
     <div class="eyebrow">O nas</div>
     <h1>Bukiet prosto <span>z serca</span></h1>
@@ -56,20 +71,25 @@
     <div class="reveal">
       <div class="brand-panel">
         <img src="assets/img/logo.png" alt="Logo Kwiaciarni Masz Ci Kwiatek">
-        <span>„Bukiet prosto z serca”</span>
       </div>
     </div>
     <div class="reveal">
       <div class="eyebrow">Nasza historia</div>
       <h2>Z pasją do piękna, krok po kroku</h2>
-      <p>Kwiaciarnia „Masz Ci Kwiatek!” przy ul. Krakowskiej 150 w Michałowicach powstała z miłości do kwiatów i chęci tworzenia chwil, które zapadają w pamięć. Każdy bukiet, który opuszcza nasz sklep, jest efektem starannego doboru kwiatów, koloru i formy — tak, by idealnie oddać emocje, jakie chcesz przekazać.</p>
-      <p>Obok kwiaciarni prowadzimy również Sklep Trzy Światy, w którym znajdziecie Państwo starannie wyselekcjonowane dodatki i upominki — idealne uzupełnienie każdego bukietu. Naszych klientów obsługujemy w języku polskim, angielskim i niemieckim.</p>
-      <p>Dzięki własnemu Kwiatomatowi, czynnemu 24 godziny na dobę, świeże kwiaty są dostępne w Michałowicach o każdej porze — nawet gdy sklep jest zamknięty.</p>
+      <p>Kwiaciarnia „Masz Ci Kwiatek!” przy ul. Krakowskiej 150 w Michałowicach powstała z miłości do kwiatów i chęci tworzenia chwil, które zapadają w pamięć. Każdy bukiet, który opuszcza nasz sklep, jest efektem starannego doboru kwiatów, koloru i formy - tak, by idealnie oddać emocje, jakie chcesz przekazać.</p>
+      <p>Obok kwiaciarni prowadzimy również Sklep Trzy Światy, w którym znajdziecie Państwo starannie wyselekcjonowane dodatki i upominki - idealne uzupełnienie każdego bukietu. Naszych klientów obsługujemy w języku polskim i angielskim.</p>
+      <p>Dzięki własnemu Kwiatomatowi, czynnemu 24 godziny na dobę, świeże kwiaty są dostępne w Michałowicach o każdej porze - nawet gdy sklep jest zamknięty.</p>
     </div>
   </div>
 </section>
 
 <section class="section-alt">
+  <div class="section-alt-bg" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="none" poster="assets/img/kwiat-poster.jpg">
+      <source src="assets/video/kwiat-otwiera-sie.webm" type="video/webm">
+      <source src="assets/video/kwiat-otwiera-sie.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="container">
     <div class="section-head center reveal">
       <div class="eyebrow">Nasze wartości</div>
@@ -77,19 +97,19 @@
     </div>
     <div class="grid grid-3">
       <div class="card reveal">
-        <div class="ico">🌿</div>
+        <div class="ico"><svg viewBox="0 0 24 24" width="1.5em" height="1.5em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21c0-8 4-13 12-15-1 8-5 13-12 15Z"/><path d="M6 21c1-4 3-7 6-9"/></svg></div>
         <h3>Świeżość i jakość</h3>
         <p>Kwiaty zamawiamy regularnie u sprawdzonych dostawców, dzięki czemu każda kompozycja jest świeża i trwała.</p>
       </div>
       <div class="card reveal">
-        <div class="ico">🎨</div>
+        <div class="ico"><svg viewBox="0 0 24 24" width="1.5em" height="1.5em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c-4.7 0-8.5 3.6-8.5 8.1 0 3.9 3.1 5.4 5.2 5.4.9 0 1.4-.5 1.4-1.2 0-.6-.4-.9-.7-1.3-.4-.4-.7-.8-.7-1.5 0-1.1 1-2 2.2-2h2c2.6 0 4.6-1.8 4.6-4.4 0-2.8-2.9-3.1-5.5-3.1Z"/><circle cx="7.8" cy="10.2" r=".9" fill="currentColor" stroke="none"/><circle cx="9.6" cy="7" r=".9" fill="currentColor" stroke="none"/><circle cx="14.2" cy="7" r=".9" fill="currentColor" stroke="none"/></svg></div>
         <h3>Indywidualne podejście</h3>
-        <p>Każdy bukiet dopasowujemy do okazji, gustu i budżetu klienta — z uwagą na najmniejszy detal.</p>
+        <p>Każdy bukiet dopasowujemy do okazji, gustu i budżetu klienta - z uwagą na najmniejszy detal.</p>
       </div>
       <div class="card reveal">
-        <div class="ico">🤝</div>
+        <div class="ico"><svg viewBox="0 0 24 24" width="1.5em" height="1.5em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.1-4.4-9.4-9C1.3 8 2.1 4.5 5.4 3.6c2.7-.7 4.8.4 6.6 2.9 1.8-2.5 3.9-3.6 6.6-2.9 3.3.9 4.1 4.4 2.8 7.4-2.3 4.6-9.4 9-9.4 9Z"/></svg></div>
         <h3>Bliskość i zaufanie</h3>
-        <p>Jesteśmy lokalną, kameralną kwiaciarnią — cenimy sobie relacje ze stałymi klientami i ich rekomendacje.</p>
+        <p>Jesteśmy lokalną, kameralną kwiaciarnią - cenimy sobie relacje ze stałymi klientami i ich rekomendacje.</p>
       </div>
     </div>
   </div>
@@ -110,20 +130,20 @@
 <section class="cta-band">
   <div class="container reveal">
     <h2>Odwiedź nas przy ul. Krakowskiej 150</h2>
-    <p style="max-width:520px; margin:0 auto 10px;">Zapraszamy do naszej kwiaciarni w Michałowicach — chętnie pomożemy dobrać idealny bukiet.</p>
+    <p style="max-width:520px; margin:0 auto 10px;">Zapraszamy do naszej kwiaciarni w Michałowicach - chętnie pomożemy dobrać idealny bukiet.</p>
     <a href="kontakt.html" class="btn btn-primary">Zobacz kontakt i mapę</a>
   </div>
 </section>
 
 <footer class="site-footer">
+  <div class="footer-flourish left" aria-hidden="true"><img src="assets/img/flower-accent-2.jpg" alt=""></div>
+  <div class="footer-flourish right" aria-hidden="true"><img src="assets/img/flower-accent-1.jpg" alt=""></div>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-about">
         <a href="index.html" class="brand" style="margin-bottom:16px;">
           <img src="assets/img/logo.png" alt="Logo">
-          <span class="brand-text"><strong>Masz Ci Kwiatek!</strong><span>Kwiaciarnia · Michałowice</span></span>
         </a>
-        <p>Kwiaciarnia „Masz Ci Kwiatek!” i Sklep Trzy Światy — bukiet prosto z serca, ul. Krakowska 150, Michałowice.</p>
         <div class="footer-social">
           <a href="https://www.facebook.com/share/1DRxV6XuJZ/?mibextid=wwXIfr" target="_blank" rel="noopener" class="icon-link" aria-label="Facebook">f</a>
           <a href="https://www.tiktok.com/@vie.vero.kwiaciarnia" target="_blank" rel="noopener" class="icon-link" aria-label="TikTok">♪</a>
@@ -143,15 +163,16 @@
         <ul>
           <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
           <li><a href="polityka-prywatnosci.html#cookies">Polityka cookies</a></li>
+          <li><a href="#" data-cookie="reopen">Ustawienia cookies</a></li>
           <li><a href="kontakt.html#mapa">Jak dojechać</a></li>
         </ul>
       </div>
       <div>
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="tel:+48573377330">☎ 573 377 330</a></li>
+          <li><a href="tel:+48573377330" class="footer-phone"><svg class="icon-phone" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 573 377 330</a></li>
           <li><a href="mailto:kontakt@maszcikwiatek.pl">✉ kontakt@maszcikwiatek.pl</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Krakowska+150+Micha%C5%82owice" target="_blank" rel="noopener">📍 ul. Krakowska 150, Michałowice</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Krakowska+150+Micha%C5%82owice" target="_blank" rel="noopener" class="footer-pin"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.3 7-11.5a7 7 0 0 0-14 0C5 14.7 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg> ul. Krakowska 150, 32-091 Michałowice</a></li>
         </ul>
       </div>
     </div>
@@ -167,12 +188,64 @@
   <div class="cookie-actions">
     <button class="btn btn-primary btn-sm" data-cookie="accept">Akceptuję wszystkie</button>
     <button class="btn btn-outline btn-sm" data-cookie="reject">Tylko niezbędne</button>
+    <button class="btn btn-text btn-sm" data-cookie="settings">Dostosuj</button>
   </div>
 </div>
 
-<a href="tel:+48573377330" class="float-call" aria-label="Zadzwoń teraz">☎</a>
+<div class="cookie-modal-backdrop" data-cookie-backdrop></div>
+<div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+  <button type="button" class="cookie-modal-close" data-cookie="close" aria-label="Zamknij okno ustawień cookies">&times;</button>
+  <h3 id="cookie-modal-title">Ustawienia prywatności</h3>
+  <p>Wybierz, na jakie pliki cookie się zgadzasz. Niezbędne pliki są zawsze aktywne, ponieważ zapewniają podstawowe działanie strony.</p>
+  <div class="cookie-cat">
+    <div class="cookie-cat-info"><strong>Niezbędne</strong><span>Wymagane do działania strony (np. zapamiętanie Twojego wyboru).</span></div>
+    <div class="a11y-switch on" aria-hidden="true"></div>
+  </div>
+  <div class="cookie-cat">
+    <div class="cookie-cat-info"><strong>Statystyczne</strong><span>Pomagają nam analizować ruch na stronie.</span></div>
+    <button type="button" class="a11y-switch" data-cookie-toggle="analytics" aria-pressed="false" aria-label="Pliki statystyczne"></button>
+  </div>
+  <div class="cookie-cat">
+    <div class="cookie-cat-info"><strong>Marketingowe</strong><span>Pozwalają wyświetlać spersonalizowane treści i reklamy.</span></div>
+    <button type="button" class="a11y-switch" data-cookie-toggle="marketing" aria-pressed="false" aria-label="Pliki marketingowe"></button>
+  </div>
+  <div class="cookie-modal-actions">
+    <button class="btn btn-primary btn-sm" data-cookie="save">Zapisz wybór</button>
+    <button class="btn btn-outline btn-sm" data-cookie="accept-all-modal">Zaakceptuj wszystkie</button>
+  </div>
+</div>
 
-<script src="assets/js/main.js"></script>
+<a href="tel:+48573377330" class="float-call" aria-label="Zadzwoń teraz"><svg class="icon-phone" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+
+<button class="a11y-toggle" id="a11y-toggle" aria-label="Opcje dostępności (WCAG)" aria-expanded="false" aria-controls="a11y-panel">
+  <svg viewBox="0 0 24 24" width="1.5em" height="1.5em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="8" r="1.6" fill="currentColor" stroke="none"/><path d="M7 10.6c1.6.9 3.3 1.3 5 1.3s3.4-.4 5-1.3"/><path d="M12 11.9v3.6M12 15.5l-2.2 4M12 15.5l2.2 4"/></svg>
+</button>
+<div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Opcje dostępności">
+  <h3>Dostępność (WCAG)</h3>
+  <div class="a11y-row">
+    <span>Rozmiar czcionki</span>
+    <div class="a11y-fontbtns">
+      <button type="button" data-a11y="font-dec" aria-label="Zmniejsz czcionkę">A&minus;</button>
+      <button type="button" data-a11y="font-inc" aria-label="Zwiększ czcionkę">A+</button>
+    </div>
+  </div>
+  <div class="a11y-row">
+    <span>Wysoki kontrast</span>
+    <button type="button" class="a11y-switch" data-a11y="contrast" aria-pressed="false" aria-label="Wysoki kontrast"></button>
+  </div>
+  <div class="a11y-row">
+    <span>Podkreśl linki</span>
+    <button type="button" class="a11y-switch" data-a11y="underline" aria-pressed="false" aria-label="Podkreśl linki"></button>
+  </div>
+  <div class="a11y-row">
+    <span>Czytelna czcionka</span>
+    <button type="button" class="a11y-switch" data-a11y="readable" aria-pressed="false" aria-label="Czytelna czcionka"></button>
+  </div>
+  <button type="button" class="a11y-reset" data-a11y="reset">Przywróć domyślne</button>
+</div>
+
+
+<script src="assets/js/main.js?v=6"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

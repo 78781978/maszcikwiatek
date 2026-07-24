@@ -23,7 +23,7 @@
   --ff-body: 'Poppins', 'Segoe UI', sans-serif;
   --hero-lift:    210px; /* extra top space reserved for the large unscrolled header logo */
 }
-@media (max-width:1320px){
+@media (max-width:980px){
   :root{ --hero-lift: 95px; }
 }
 
@@ -99,7 +99,7 @@ section{ padding:96px 0; position:relative; }
   transition:height .35s ease, width .35s ease, box-shadow .35s ease;
 }
 .site-header.scrolled .brand img{ height:56px; width:56px; box-shadow:0 0 0 2px var(--pink),0 0 22px var(--pink-glow); }
-@media (max-width:1320px){
+@media (max-width:980px){
   .brand img{ height:104px; width:104px; }
   .site-header.scrolled .brand img{ height:48px; width:48px; }
 }
@@ -367,7 +367,7 @@ html.js .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s e
 html.js .reveal.in{ opacity:1; transform:translateY(0); }
 
 /* ---------- Responsive ---------- */
-@media (max-width:1320px){
+@media (max-width:980px){
   .main-nav{ display:none; }
   .nav-toggle{ display:flex; }
   .grid-3{ grid-template-columns:repeat(2,1fr); }

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://78781978.github.io/maszcikwiatek/sitemap.xml

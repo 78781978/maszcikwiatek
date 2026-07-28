@@ -11,10 +11,12 @@
   --pink-2:       #ff3f96;
   --pink-dark:    #9c0052;
   --pink-glow:    rgba(236, 24, 119, .45);
+  --pink-btn-1:   #c21468; /* darker than --pink-2 so white button text clears 4.5:1 (WCAG 1.4.3) */
+  --pink-btn-2:   #7a0d40;
   --silver:       #e7e6ea;
   --white:        #faf9fb;
   --gray:         #a6a3ac;
-  --gray-dim:     #706d76;
+  --gray-dim:     #918e97; /* lightened from #706d76 to clear 4.5:1 on black (WCAG 1.4.3) */
   --border:       rgba(255,255,255,.09);
   --radius:       18px;
   --radius-sm:    10px;
@@ -39,7 +41,15 @@
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; scroll-padding-top:110px; }
+
+/* ---------- Skip link (WCAG 2.4.1 Bypass Blocks) ---------- */
+.skip-link{
+  position:absolute; left:0; top:-60px; z-index:1000;
+  background:var(--pink-btn-1); color:#fff; padding:14px 22px; border-radius:0 0 10px 0;
+  font-weight:600; font-size:.9rem; text-decoration:none; transition:top .2s ease;
+}
+.skip-link:focus{ top:0; outline:3px solid #fff; outline-offset:-3px; }
 body{
   margin:0;
   background:var(--black);
@@ -108,7 +118,7 @@ section{ padding:96px 0; position:relative; }
   white-space:nowrap; position:relative; overflow:hidden;
 }
 .btn-primary{
-  background:linear-gradient(135deg,var(--pink-2),var(--pink-dark));
+  background:linear-gradient(135deg,var(--pink-btn-1),var(--pink-btn-2));
   color:#fff; box-shadow:0 10px 30px var(--pink-glow);
 }
 .btn-primary::before{
@@ -176,7 +186,7 @@ section{ padding:96px 0; position:relative; }
   font-size:.72rem; font-weight:700; letter-spacing:.03em; color:var(--gray);
 }
 .lang-switch a:hover{ color:var(--pink-2); }
-.lang-switch .is-active{ background:var(--pink); color:#fff; }
+.lang-switch .is-active{ background:var(--pink-btn-1); color:#fff; }
 .mobile-nav .lang-switch{ margin-top:6px; }
 .mobile-nav .lang-switch a, .mobile-nav .lang-switch span{ font-family:var(--ff-body); font-size:.85rem; padding:8px 14px; }
 .icon-link{
@@ -309,7 +319,7 @@ section{ padding:96px 0; position:relative; }
   padding:56px; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;
 }
 .kwiatomat .badge-24{
-  display:inline-flex; align-items:center; gap:8px; background:var(--pink); color:#fff; font-weight:700;
+  display:inline-flex; align-items:center; gap:8px; background:var(--pink-btn-1); color:#fff; font-weight:700;
   padding:6px 16px; border-radius:999px; font-size:.78rem; letter-spacing:.06em; margin-bottom:16px;
 }
 .kwiatomat h2{ margin-bottom:14px; }

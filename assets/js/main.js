@@ -40,11 +40,35 @@ document.addEventListener('DOMContentLoaded', function () {
     reveals.forEach(function (el) { el.classList.add('in'); });
   }
 
+  /* --- Focus trap helper (dla modala cookies i panelu dostępności) --- */
+  function getFocusable(container) {
+    if (!container) return [];
+    return Array.prototype.slice.call(
+      container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')
+    ).filter(function (el) { return el.offsetParent !== null; });
+  }
+  function trapFocusKeydown(e, container) {
+    if (e.key !== 'Tab') return;
+    var focusables = getFocusable(container);
+    if (!focusables.length) return;
+    var first = focusables[0], last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
+  }
+
   /* --- Banner + okno zgód cookies (RODO) --- */
   var COOKIE_KEY = 'mck_cookie_consent';
   var banner = document.querySelector('.cookie-banner');
   var cookieBackdrop = document.querySelector('[data-cookie-backdrop]');
   var cookieModal = document.querySelector('.cookie-modal');
+  var cookieReturnFocus = null;
+  function cookieModalKeydown(e) {
+    if (e.key === 'Escape') { closeCookieModal(); return; }
+    trapFocusKeydown(e, cookieModal);
+  }
 
   function getCookiePrefs() {
     try {
@@ -60,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem(COOKIE_KEY, JSON.stringify(prefs));
   }
   function openCookieModal() {
+    cookieReturnFocus = document.activeElement;
     var prefs = getCookiePrefs() || {};
     document.querySelectorAll('[data-cookie-toggle]').forEach(function (btn) {
       var on = !!prefs[btn.getAttribute('data-cookie-toggle')];
@@ -68,10 +93,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     if (cookieBackdrop) cookieBackdrop.classList.add('open');
     if (cookieModal) cookieModal.classList.add('open');
+    document.addEventListener('keydown', cookieModalKeydown);
+    // deferred: the browser's own "focus the clicked control" default action
+    // runs after this handler and would otherwise steal focus back
+    setTimeout(function () {
+      var focusables = getFocusable(cookieModal);
+      if (focusables.length) focusables[0].focus();
+    }, 0);
   }
   function closeCookieModal() {
     if (cookieBackdrop) cookieBackdrop.classList.remove('open');
     if (cookieModal) cookieModal.classList.remove('open');
+    document.removeEventListener('keydown', cookieModalKeydown);
+    if (cookieReturnFocus && typeof cookieReturnFocus.focus === 'function') cookieReturnFocus.focus();
+    cookieReturnFocus = null;
   }
 
   if (banner) {
@@ -162,16 +197,38 @@ document.addEventListener('DOMContentLoaded', function () {
   applyA11y(a11yState);
 
   var a11yToggle = document.getElementById('a11y-toggle');
+  var a11yReturnFocus = null;
+  function a11yPanelKeydown(e) {
+    if (e.key === 'Escape') { closeA11yPanel(); return; }
+    trapFocusKeydown(e, a11yPanel);
+  }
+  function openA11yPanel() {
+    a11yReturnFocus = document.activeElement;
+    a11yPanel.classList.add('open');
+    a11yToggle.setAttribute('aria-expanded', 'true');
+    document.addEventListener('keydown', a11yPanelKeydown);
+    // deferred: the browser's own "focus the clicked control" default action
+    // runs after this handler and would otherwise steal focus back
+    setTimeout(function () {
+      var focusables = getFocusable(a11yPanel);
+      if (focusables.length) focusables[0].focus();
+    }, 0);
+  }
+  function closeA11yPanel() {
+    a11yPanel.classList.remove('open');
+    a11yToggle.setAttribute('aria-expanded', 'false');
+    document.removeEventListener('keydown', a11yPanelKeydown);
+    if (a11yReturnFocus && typeof a11yReturnFocus.focus === 'function') a11yReturnFocus.focus();
+    a11yReturnFocus = null;
+  }
   if (a11yToggle && a11yPanel) {
     a11yToggle.addEventListener('click', function (e) {
       e.stopPropagation();
-      var open = a11yPanel.classList.toggle('open');
-      a11yToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (a11yPanel.classList.contains('open')) closeA11yPanel(); else openA11yPanel();
     });
     document.addEventListener('click', function (e) {
       if (a11yPanel.classList.contains('open') && !a11yPanel.contains(e.target) && e.target !== a11yToggle) {
-        a11yPanel.classList.remove('open');
-        a11yToggle.setAttribute('aria-expanded', 'false');
+        closeA11yPanel();
       }
     });
     var fontInc = a11yPanel.querySelector('[data-a11y="font-inc"]');

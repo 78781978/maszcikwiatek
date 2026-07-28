@@ -448,11 +448,12 @@ section{ padding:96px 0; position:relative; }
 .footer-about p{ font-size:.88rem; }
 .footer-social{ display:flex; gap:12px; margin-top:18px; }
 .footer-bottom{
-  border-top:1px solid var(--border); padding-top:24px; display:flex; justify-content:space-between;
+  border-top:1px solid var(--border); padding-top:24px; padding-right:84px; display:flex; justify-content:space-between;
   flex-wrap:wrap; gap:12px; font-size:.8rem; color:var(--gray-dim);
 }
 .footer-bottom a{ color:var(--gray-dim); }
 .footer-bottom a:hover{ color:var(--pink-2); }
+.footer-credit .grad-text{ font-weight:700; letter-spacing:.03em; }
 
 /* ---------- Cookie banner ---------- */
 .cookie-banner{

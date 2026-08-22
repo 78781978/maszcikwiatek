@@ -280,8 +280,14 @@ section{ padding:96px 0; position:relative; }
   font-size:.88rem; color:var(--silver); line-height:1.6; flex-grow:1;
 }
 .review-card .review-author{ margin-top:18px; padding-top:16px; border-top:1px solid var(--border); }
-.review-card .review-author strong{ display:block; font-size:.92rem; color:var(--white); }
-.review-card .review-author span{ font-size:.76rem; color:var(--gray); }
+.review-card .review-author strong{
+  display:block; font-size:.92rem; color:var(--white);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.review-card .review-author span{
+  display:block; font-size:.76rem; color:var(--gray);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
 
 .card{
   background:var(--black-card); border:0; box-shadow:var(--ring-3d); border-radius:var(--radius);

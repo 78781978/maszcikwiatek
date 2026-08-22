@@ -297,6 +297,25 @@ section{ padding:96px 0; position:relative; }
 .card p{ margin-bottom:0; font-size:.92rem; }
 .card a.card-link{ display:inline-block; margin-top:16px; font-size:.85rem; color:var(--pink-2); font-weight:600; }
 
+.card-photo{
+  background:var(--black-card); border:0; box-shadow:var(--ring-3d); border-radius:var(--radius);
+  padding:0; overflow:hidden; display:flex; flex-direction:column;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.card-photo:hover{ transform:translateY(-6px); box-shadow:var(--ring-3d-hover); }
+.card-photo .card-photo-img{ width:100%; aspect-ratio:4/3; overflow:hidden; }
+.card-photo .card-photo-img img{
+  width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;
+}
+.card-photo:hover .card-photo-img img{ transform:scale(1.06); }
+.card-photo .card-photo-text{
+  background:linear-gradient(135deg,var(--pink-btn-1),var(--pink-btn-2));
+  padding:18px 18px 22px; flex-grow:1;
+}
+.card-photo h3{ color:#fff; margin-bottom:6px; font-size:1.05rem; }
+.card-photo p{ color:rgba(255,255,255,.92); font-size:.85rem; margin-bottom:0; line-height:1.5; }
+@media (max-width:560px){ .card-photo .card-photo-img{ aspect-ratio:16/10; } }
+
 /* ---------- About split ---------- */
 .split{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
 .split img.rounded{ border-radius:var(--radius); box-shadow:var(--shadow); border:1px solid var(--border); }

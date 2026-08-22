@@ -6,6 +6,11 @@
    niezależnie od tego, czy plik jest wyświetlany z portfolio.html czy en/portfolio.html. */
 
 window.MCK_GALLERY = [
+  { type: 'photo', src: 'assets/img/gallery/gallery-01.jpg' },
+  { type: 'photo', src: 'assets/img/gallery/gallery-02.jpg' },
+  { type: 'photo', src: 'assets/img/gallery/gallery-03.jpg' },
+  { type: 'photo', src: 'assets/img/gallery/gallery-04.jpg' },
+  { type: 'photo', src: 'assets/img/gallery/gallery-05.jpg' },
   { type: 'photo', src: 'assets/img/service-bukiety.jpg' },
   { type: 'photo', src: 'assets/img/service-kompozycje.jpg' },
   { type: 'photo', src: 'assets/img/service-sluby.jpg' },
